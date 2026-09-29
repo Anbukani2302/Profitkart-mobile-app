@@ -23,7 +23,15 @@ In the output, you'll find options to open the app in a
 - [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
 - [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+You can start developing by editing routes in `src/app`. This project uses [Expo Router](https://docs.expo.dev/router/introduction).
+
+## ProfitKart setup
+
+Set `API_URL` in `src/services/api.js` to the origin of your Express server, without a trailing slash. For a physical Android device, use the computer's LAN address, such as `http://192.168.1.10:5000`, and keep both devices on the same Wi-Fi network.
+
+The app sends login credentials to `POST /api/auth/login` as `{ "email": "...", "password": "..." }`. Products, dashboard statistics, notifications, and profile data load from their matching GET endpoints. Update the endpoint or response mapping in `src/services/api.js` if your backend uses a different contract.
+
+Notifications are local UI examples until a notification endpoint is available. Product checkout is a UI placeholder; no purchase API is configured.
 
 ## Get a fresh project
 
