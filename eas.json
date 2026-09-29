@@ -1,0 +1,11 @@
+{
+  "build": {
+    "preview": {
+      "node": "22.13.0",
+      "distribution": "internal",
+      "android": {
+        "buildType": "apk"
+      }
+    }
+  }
+}
